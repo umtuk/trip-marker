@@ -1,0 +1,22 @@
+nav {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+article {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.car-travel-image {
+    height: 700px;
+    background-size: cover;
+}
+
+.bg-yellow {
+    background-color: #FFF7E1;
+}
+
+.bg-beige {
+    background-color: #FAF1ED;
+}
