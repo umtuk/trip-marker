@@ -8,7 +8,8 @@ article {
     padding-right: 20%;
 }
 
-.car-travel-image {
+.beach-nature-image {
+    background-image: url('../assets/beach-nature.png');
     height: 700px;
     background-size: cover;
 }
