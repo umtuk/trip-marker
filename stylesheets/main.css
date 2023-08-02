@@ -15,6 +15,12 @@ html {
     -webkit-text-fill-color: transparent;
 }
 
+.cursor-pointer:hover {
+    cursor: pointer;
+    fill: #F14694;;
+    color: #F14694;
+}
+
 header {
     padding-left: 20%;
     padding-right: 20%;
@@ -42,4 +48,9 @@ a:focus {
 
 .text-shadow {
     text-shadow: 0px 0px 6px gray;
+}
+
+.text-gray {
+    color: #6C757D;
+    fill: #6C757D;
 }
