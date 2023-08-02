@@ -1,0 +1,43 @@
+#ui {
+  width: 542px;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-light-gray {
+  background-color: #F2F2F2;
+}
+
+img {
+  height: 60%;
+  object-fit: cover;
+}
+
+.card-img-height-2 {
+  height: 12em;
+}
+
+.rate {
+  background: url(https://aldo814.github.io/jobcloud/html/images/user/star_bg02.png) no-repeat;
+  width: 121px;
+  height: 20px;
+  position: relative;
+}
+.rate span {
+  position: absolute;
+  background: url(https://aldo814.github.io/jobcloud/html/images/user/star02.png);
+  width: auto;
+  height: 20px;
+}
+
+body{
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
