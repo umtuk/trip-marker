@@ -13,9 +13,9 @@
     <script type="module" src="./javascripts/main.js"></script>
     <script type="module" src="./javascripts/index.js"></script>
 </head>
-<body class="d-flex flex-column min-vh-100 m-0">
-    <header class=" py-2">
-        <div class="row">
+<body class="d-flex flex-column min-vh-100 m-0" style="overflow-x: hidden;">
+    <header class="d-flex justify-content-center">
+        <div class="row default-width">
             <div class="col-auto">
                 <a href="./index.html">
                     <span class="fs-3 logo"><b>Tripmarker</b></span>
@@ -26,11 +26,13 @@
             </div>
         </div>
     </header>
-    <nav class="py-2 container"></nav>
+    <nav class="py-2 container">
+        <div class="default-width"></div>
+    </nav>
     <section class="py-2">
-        <article class="py-2 bg-beige">
-            <div class="row">
-                <div class="col">
+        <article class="pt-3 pb-5 bg-beige d-flex justify-content-center">
+            <div class="d-flex default-width">
+                <div>
                     <div class="display-6 py-3"><b>손쉽게 여행 플랜을 계획해보세요</b></div>
                     <div class="text-muted pb-4">
                         하나의 페이지에서 모든 플랜을 세울 수 있습니다.<br>
@@ -38,18 +40,20 @@
                     </div>
                     <div><button class="btn btn-dark" onclick="location.href='./plan.html'">플랜 바로가기</button></div>
                 </div>
-                <div class="col">
-                    <img src="./assets/web-map-flat-image.png" alt="web-map-flat-image" width="500px" height="auto">
+                <div>
+                    <img src="./assets/web-map-flat-image.png" alt="web-map-flat-image" width="300px" height="auto">
                 </div>
             </div>
         </article>
-        <article class="pt-3 pb-5">
-            <div class="display-6 py-3"><b>친구들과 여행 플랜을 공유해보세요.</b></div>
-            <div class="text-muted pb-4">
-                파일로 여행 플랜을 저장할 수 있습니다. <br>
-                카카오톡으로 여행 플랜을 공유할 수 있습니다.
+        <article class="pt-3 pb-5 d-flex justify-content-center">
+            <div class="default-width">
+                <div class="display-6 py-3"><b>친구들과 여행 플랜을 공유해보세요.</b></div>
+                <div class="text-muted pb-4">
+                    파일로 여행 플랜을 저장할 수 있습니다. <br>
+                    카카오톡으로 여행 플랜을 공유할 수 있습니다.
+                </div>
+                <div><button class="btn btn-dark" onclick="location.href='./plan.html'">공유 바로가기</button></div>
             </div>
-            <div><button class="btn btn-dark" onclick="location.href='./plan.html'">공유 바로가기</button></div>
         </article>
         <article class="beach-nature-image row mb-5 bg-yellow">
                 <div class="text-center align-self-center">
@@ -59,9 +63,11 @@
                 </div>
         </article>
     </section>
-    <footer class="mt-5 py-4 mt-auto">
-        This is created for the purpose of project at SeoulTech Univ, not for <strong>commercial</strong>. <br>
-        If you have any questions, please contact <a href="mailto: taeukum@gmail.com"><strong>here</strong></a>.
+    <footer class="mt-5 py-4 mt-auto d-flex justify-content-center">
+        <div class="default-width ">
+            This is created for the purpose of project at SeoulTech Univ, not for <strong>commercial</strong>. <br>
+            If you have any questions, please contact <a href="mailto: taeukum@gmail.com"><strong>here</strong></a>.
+        </div>
     </footer>
 </body>
 </html> 
