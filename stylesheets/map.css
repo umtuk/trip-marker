@@ -12,6 +12,19 @@
   background-color: #F2F2F2;
 }
 
+.ui-width {
+  width: 200px;
+}
+
+.search-button {
+  border: 0;
+  background-color: white;
+}
+
+.search-button:hover {
+  background-color: #F2F2F2;
+}
+
 img {
   height: 60%;
   object-fit: cover;
@@ -40,4 +53,24 @@ body{
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+li {
+  font-size: 0.9em;
+  width: fit-content;
+}
+
+.dropdown-menu {
+  min-width: fit-content;
+}
+
+#search {
+  display: inline-block;
+  width: 400px;
+
+  position: fixed;
+  top: 72px;
+  right: 6px;
+
+  background-color: white;
 }
