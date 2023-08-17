@@ -557,7 +557,7 @@ function createActivictDropdown(formatted) {
   let li = document.createElement('li');
   dropdown.appendChild(li);
   let a = document.createElement('a');
-  li.appendChild(a);
+  // li.appendChild(a);
   a.href = '#';
   a.setAttribute('data-bs-toggle', 'offcanvas');
   a.setAttribute('data-bs-target', '#offcanvasScrolling');
