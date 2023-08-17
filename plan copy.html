@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripmarker - Plan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/plan.css" />
+    <script type="module" src="./javascripts/main.js"></script>
+    <script type="module" src="./javascripts/plan.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 m-0">
+    <header class="d-flex justify-content-center">
+        <div class="row default-width">
+            <div class="col-auto">
+                <a href="./index.html">
+                    <span class="fs-3 logo"><b>Tripmarker</b></span>
+                </a>
+            </div>
+            <div class="col align-self-center pt-2">
+                <a href="./plan.html"><b>여행 플랜</b></a>
+            </div>
+        </div>
+    </header>
+    <nav class="py-2 container">
+        <div class="default-width"></div>
+    </nav>
+    <section class="py-2 d-flex justify-content-center">
+        <div class="default-width">
+            <article class="py-2 text-center">
+                <span class="fs-2"><b>여행</b></span>
+            </article>
+            <article class="py-2">
+                <div class="row row-cols-auto justify-content-center" id="plan-list">
+                    <div class="m-2 card plan-card col">
+                        <div class="card-body row">
+                            <div class="col align-self-center text-center">
+                                <button class="btn btn-light rounded-pill border border-dark create-btn" onclick="createPlan(e)"><b>+ 여행 만들기</b></button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="m-2 p-0 card plan-card col">
+                        <img src="./assets/beach-nature.png" class="card-img-top cursor-pointer" alt="card-img">
+                        <div class="card-body">
+                            <input type="hidden" name="index" value="1">
+                            <div class="card-title">
+                                <a href="#"><b>서울 여행</b></a>
+                            </div>
+                            <div class="card-text">
+                                <div>2023-09-27~2023-10-01</div>
+                                <small class="text-muted">포함: 4개의 항목</small>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="m-2 p-0 card plan-card col">
+                        <img src="./assets/web-map-flat-image.png" class="card-img-top cursor-pointer" alt="card-img">
+                        <div class="card-body">
+                            <input type="hidden" name="index" value="1">
+                            <div class="row justify-content-between">
+                                <div class="col col-sm-auto">
+                                    <div class="card-title">
+                                        <span><a href="#"><b>서울 여행</b></a></span>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-auto">
+                                    <div class="setting cursor-pointer p-0 m-0">
+                                        <svg viewBox="0 0 24 24" width="1.25em" height="1.25em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div>2023-09-27~2023-10-01</div>
+                                <div class="row justify-content-between">
+                                    <div class="col col-sm-auto">
+                                        <div class="card-title">
+                                            <small class="text-muted">포함: 4개의 항목</small>
+                                        </div>
+                                    </div>
+                                    <div class="col col-sm-auto">
+                                        <div class="footer text-gray">
+                                            <div class="fs-6 row p-0 share cursor-pointer">
+                                                <svg class="col align-self-center col-sm-auto pe-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="1em" height="1em"><path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z"/></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="m-2 p-0 card plan-card col">
+                        <img src="https://pbs.twimg.com/media/EA9UJBjU4AAdkCm.jpg" class="card-img-top cursor-pointer" alt="card-img">
+                        <div class="card-body">
+                            <input type="hidden" name="index" value="1">
+                            <div class="row justify-content-between">
+                                <div class="col col-sm-auto">
+                                    <div class="card-title">
+                                        <span><a href="#"><b>서울 여행</b></a></span>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-auto">
+                                    <div class="setting cursor-pointer p-0 m-0">
+                                        <svg viewBox="0 0 24 24" width="1.25em" height="1.25em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div>2023-09-27~2023-10-01</div>
+                                <div class="row justify-content-between">
+                                    <div class="col col-sm-auto">
+                                        <div class="card-title">
+                                            <small class="text-muted">포함: 4개의 항목</small>
+                                        </div>
+                                    </div>
+                                    <div class="col col-sm-auto">
+                                        <div class="footer text-gray">
+                                            <div class="fs-6 row p-0 share cursor-pointer">
+                                                <svg class="col align-self-center col-sm-auto pe-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="1em" height="1em"><path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z"/></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <footer class="mt-5 py-4 mt-auto d-flex justify-content-center">
+        <div class="default-width ">
+            This is created for the purpose of project at SeoulTech Univ, not for <strong>commercial</strong>. <br>
+            If you have any questions, please contact <a href="mailto: taeukum@gmail.com"><strong>here</strong></a>.
+        </div>
+    </footer>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+</html> 

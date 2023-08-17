@@ -74,3 +74,41 @@ li {
 
   background-color: white;
 }
+
+#autocomplete {
+  display: inline-block;
+  width: 400px;
+
+  position: fixed;
+  top: 72px;
+  right: 6px;
+
+  background-color: white;
+}
+
+#pac-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 10px;
+  padding: 5px;
+  font-family: Roboto, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+#pac-input {
+  width: 250px;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+[class$=api-load-alpha-banner] {
+  display: none;
+}

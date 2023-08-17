@@ -10,13 +10,12 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet" type="text/css" href="./stylesheets/main.css" />
     <link rel="stylesheet" type="text/css" href="./stylesheets/map.css" />
-    <script type="module" src="./javascripts/main.js"></script>
-    <script type="module" src="./javascripts/map.js"></script>
+    <script async type="module" src="./javascripts/main.js"></script>
+    <script async type="module" src="./javascripts/map.js"></script>
 </head>
-<body class="d-flex flex-column h-100" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="d-flex flex-column h-100">
     <header class="d-flex justify-content-center">
         <div class="row default-width">
             <div class="col-auto">
@@ -31,308 +30,101 @@
     </header>
     <nav class="py-2 container">
     </nav>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"><b>여행 수정하기</b></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="create-plan-input">
+              <b>여행 이름</b>
+              <input type="text" class="form-control" name="title" required>
+              <b></b>
+              <b>여행 시작</b>
+              <div class="input-group">
+                <input type="number" class="form-control" name="begin-year" required>
+                <span class="input-group-text">년</span>
+                <input type="number" class="form-control" name="begin-month" required>
+                <span class="input-group-text">월</span>
+                <input type="number" class="form-control" name="begin-day" required>
+                <span class="input-group-text">일</span>
+              </div>
+              <b>여행 종료</b>
+              <div class="input-group">
+                <input type="number" class="form-control" name="end-year" required>
+                <span class="input-group-text">년</span>
+                <input type="number" class="form-control" name="end-month" required>
+                <span class="input-group-text">월</span>
+                <input type="number" class="form-control" name="end-day" required>
+                <span class="input-group-text">일</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="update-plan">수정하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <section class="row py-2 h-100 mb-5">
         <div id="ui" class="col-md-auto bg-light-gray p-0 m-0" style="overflow-x: hidden; overflow-y: scroll;">
-            <div class="card rounded-0 m-0 p-0 mb-3">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
-
-                <div class="row justify-content-between p-4">
-                    <div class="col col-sm-auto">
-                    </div>
-                    <div class="col col-sm-auto">
-                        <div class="setting cursor-pointer p-0 m-0">
-                            <a class="cursor-pointer" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 24 24" width="1.25em" height="1.25em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
-                            </a>
-                            <ul class="dropdown-menu p-2">
-                                <li><a href="#">여행 수정</a></li>
-                                <li><a href="#">여행 삭제</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-title ps-4">
-                    <span class="fs-4"><b>서울 여행</b></span>
-                </div>
-                <div class="cart-text ps-4 pe-4">
-                    <div class="description">
-                        설명 설명 설명 <br>
-                        설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명 설명
-                    </div>
-                </div>
-                <div class="footer text-gray p-4">
-                    <a class="cursor-pointer" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <div class="fs-6 row p-0 share cursor-pointer">
-                            <svg class="col align-self-center col-sm-auto pe-1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="1em" height="1em"><path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z"/></svg>
-                            <div class="col align-self-center col-sm-auto p-0">공유</div>
-                        </div>                    </a>
-                    <ul class="dropdown-menu p-2">
-                        <li><a href="#">파일로 공유하기</a></li>
-                        <li><a href="#">카카오톡으로 공유하기</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card rounded-0 m-0 p-4 mb-3">
-                시간이 설정되지 않음
-            </div>
-
-            <div class="card rounded-0 m-0 p-0 mb-3">
-                <img src="https://pbs.twimg.com/media/EA9UJBjU4AAdkCm.jpg" class="card-img-top card-img-height-2" alt="card-img">
-                <div class="row justify-content-between px-4 pt-4">
-                    <div class="col col-sm-auto">
-                        <div class="card-title">
-                            <span class="fs-4"><b>성심당</b></span>
-                        </div>
-                    </div>
-                    <div class="col col-sm-auto">
-                        <div class="setting cursor-pointer p-0 m-0">
-                            <a class="cursor-pointer" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 24 24" width="1.25em" height="1.25em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
-                            </a>
-                            <ul class="dropdown-menu p-2">
-                                <li><a href="#">메모 수정</a></li>
-                                <li><a href="#">메모 삭제</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-text pb-3 ps-4">
-                    <div class="row ps-2">
-                        <div class="rate d-inline-block col-sm-auto p-0">
-                            <span style="width: 50%"></span>
-                        </div>
-                        <span class="visited col-sm-auto">206</span>
-                    </div>
-                    <div class="text-muted">
-                        대전, 대한민국
-                    </div>
-                    <div class="time">
-                    </div>
-                    <div class="description  ps-4 pe-4">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card rounded-0 m-0 p-4 mb-3">
-                1일차
-            </div>
-
-            <div class="card rounded-0 m-0 p-0 mb-3">
-                <img src="https://pbs.twimg.com/media/EA9UJBjU4AAdkCm.jpg" class="card-img-top card-img-height-2" alt="card-img">
-                <div class="row justify-content-between px-4 pt-4">
-                    <div class="col col-sm-auto">
-                        <div class="card-title">
-                            <span class="fs-4"><b>성심당</b></span>
-                        </div>
-                    </div>
-                    <div class="col col-sm-auto">
-                        <div class="setting cursor-pointer p-0 m-0">
-                            <a class="cursor-pointer" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 24 24" width="1.25em" height="1.25em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
-                            </a>
-                            <ul class="dropdown-menu p-2">
-                                <li><a href="#">메모 수정</a></li>
-                                <li><a href="#">메모 삭제</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-text pb-3 ps-4">
-                    <div class="row ps-2">
-                        <div class="rate d-inline-block col-sm-auto p-0">
-                            <span style="width: 50%"></span>
-                        </div>
-                        <span class="visited col-sm-auto">206</span>
-                    </div>
-                    <div class="text-muted">
-                        대전, 대한민국
-                    </div>
-                    <div class="time">
-                        18:00~20:00
-                    </div>
-                    <div class="description pe-4">
-                        메모 메모 메모 메모 메모 <br> <br>
-                        메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모
-                    </div>
-                </div>
-            </div>
-
-            <div class="card rounded-0 m-0 p-4 mb-3">
-                2일차
-            </div>
-
-            <div class="card rounded-0 m-0 p-0 mb-3">
-                <img src="https://pbs.twimg.com/media/EA9UJBjU4AAdkCm.jpg" class="card-img-top card-img-height-2" alt="card-img">
-                <div class="row justify-content-between px-4 pt-4">
-                    <div class="col col-sm-auto">
-                        <div class="card-title">
-                            <span class="fs-4"><b>성심당</b></span>
-                        </div>
-                    </div>
-                    <div class="col col-sm-auto">
-                        <div class="setting cursor-pointer p-0 m-0">
-                            <svg viewBox="0 0 24 24" width="1.5em" height="1.5em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-text pb-3 ps-4">
-                    <div class="row ps-2">
-                        <div class="rate d-inline-block col-sm-auto p-0">
-                            <span style="width: 50%"></span>
-                        </div>
-                        <span class="visited col-sm-auto">206</span>
-                    </div>
-                    <div class="text-muted">
-                        대전, 대한민국
-                    </div>
-                    <div class="time">
-                        18:00~20:00
-                    </div>
-                    <div class="description">
-                        메모
-                    </div>
-                </div>
-            </div>
-
-            <div class="card rounded-0 m-0 p-4 mb-3">
-                3일차
-            </div>
-
-            <div class="card rounded-0 m-0 p-0 mb-3">
-                <img src="https://pbs.twimg.com/media/EA9UJBjU4AAdkCm.jpg" class="card-img-top card-img-height-2" alt="card-img">
-                <div class="row justify-content-between px-4 pt-4">
-                    <div class="col col-sm-auto">
-                        <div class="card-title">
-                            <span class="fs-4"><b>성심당</b></span>
-                        </div>
-                    </div>
-                    <div class="col col-sm-auto">
-                        <div class="setting cursor-pointer p-0 m-0">
-                            <svg viewBox="0 0 24 24" width="1.5em" height="1.5em" class="d Vb UmNoP" x="0" y="0"><circle cx="4.5" cy="11.9" r="2.5"></circle><circle cx="19.5" cy="11.9" r="2.5"></circle><circle cx="12" cy="11.9" r="2.5"></circle></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-text pb-3 ps-4">
-                    <div class="row ps-2">
-                        <div class="rate d-inline-block col-sm-auto p-0">
-                            <span style="width: 50%"></span>
-                        </div>
-                        <span class="visited col-sm-auto">206</span>
-                    </div>
-                    <div class="text-muted">
-                        대전, 대한민국
-                    </div>
-                    <div class="time">
-                        18:00~20:00
-                    </div>
-                    <div class="description">
-                        메모 메모 메모 메모 메모 <br> <br>
-                        메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모 메모
-                    </div>
-                </div>
-            </div>
-            <br><br>
+        </div>
+        <div class="pac-card" id="pac-card">
+            <p>장소 찾기 및 추가</p>
         </div>
         <div id="map" class="col"></div>
-        <div id="search" class="card plan-card rounded-0 p-0">
-            <div class="card-title p-4 pb-1">
-                <div class="fs-6 pb-2"><b>장소 찾기 및 추가</b></div>
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control rounded-0 py-2" placeholder="구글 지도에서 검색하기" aria-label="구글 지도에서 검색하기">
-                    <button class="btn btn-outline-secondary rounded-0" type="button">검색</button>
-                </div>
-            </div>
-            <div class="card-body m-0 p-0">
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-                <button class="w-100 search-button" onclick="console.log('hello')">
-                    <div class="row justify-content-between py-2">
-                        <div class="col col-sm-auto ps-4">
-                            <div>한국영상박물관</div>
-                            <div><small class="text-muted">포함: 4개의 항목</small></div>
-                        </div>
-                        <div class="col col-sm-auto pe-4 text-gray align-self-center pb-2">
-                            <svg height="1.25em" viewBox="0 0 24 24" width="1.25em" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
-                        </div>
-                </button>
-            </div>
-        </div>
     </section>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">메모 수정하기</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <p>Try scrolling the rest of the page to see this option in action.</p>
+            <b>여행 시작</b>
+            <div class="input-group">
+              <input type="number" class="form-control" name="begin-year" required>
+              <span class="input-group-text">년</span>
+              <input type="number" class="form-control" name="begin-month" required>
+              <span class="input-group-text">월</span>
+              <input type="number" class="form-control" name="begin-day" required>
+              <span class="input-group-text">일</span>
+            </div>
+            <div class="input-group">
+                <input type="number" class="form-control" name="begin-month" required>
+                <span class="input-group-text">시</span>
+                <input type="number" class="form-control" name="begin-day" required>
+                <span class="input-group-text">분</span>
+            </div>
+
+            <b>여행 종료</b>
+            <div class="input-group">
+                <input type="number" class="form-control" name="end-year" required>
+                <span class="input-group-text">년</span>
+                <input type="number" class="form-control" name="end-month" required>
+                <span class="input-group-text">월</span>
+                <input type="number" class="form-control" name="end-day" required>
+                <span class="input-group-text">일</span>
+              </div>
+              <div class="input-group">
+                  <input type="number" class="form-control" name="end-month" required>
+                  <span class="input-group-text">시</span>
+                  <input type="number" class="form-control" name="end-day" required>
+                  <span class="input-group-text">분</span>
+              </div>
+            <b>메모</b>
+            <input type="text" class="form-control" name="description" required>
+          </div>
+            <button type="button" class="btn btn-primary" id="update-plan">수정하기</button>
         </div>
     </div>
 
     <!-- prettier-ignore -->
-    <script>
-        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-            ({key: "AIzaSyAFCi2MzoYV1CCcnyuqEXODOuIcoCI6Rug", v: "weekly"});
-    </script>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyAFCi2MzoYV1CCcnyuqEXODOuIcoCI6Rug", v: "alpha"});</script>
+
     <script>
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
